@@ -31,8 +31,8 @@ Semantic xuất Segmentation mask 1.1, instance và panoptic xuất COCO 1.0. M�
 
 Ở `medium_instance` mình dùng gợi ý tự động trước, rồi mở CVAT chỉnh sửa và xóa những mask không phù hợp. Object mình tự vẽ tay là `person 8` ở frame 0. Mình vẽ nó sau khi job đã có gợi ý, nên không phải object vẽ trước khi xem gợi ý.
 
-- Ảnh, vị trí và object Medium tự vẽ: `medium_instance`, frame 0, object `person 8` (tên trong danh sách Objects của CVAT).
-- Class và quy tắc tôi dùng để chọn biên: class `person`; chỉ vẽ phần người nhìn thấy, không vẽ phần bị che.
+- Ảnh, vị trí và object Medium tự vẽ: `medium_instance`, frame 0 (ảnh `000000181542.jpg`), object `person 8` (nguồn Manual trong danh sách Objects của CVAT). Đó là người phụ nữ mặc áo dài đỏ đang đi qua vạch kẻ đường, đứng giữa ảnh, xung quanh là các xe máy.
+- Class và quy tắc tôi dùng để chọn biên: class `person`; chỉ vẽ phần người nhìn thấy, đi theo viền áo dài và tóc, không lấy phần xe máy ở sau hoặc bên cạnh.
 - Sau khi có gợi ý: với các mask còn lại, mình duyệt từng cái, xóa mask sai class hoặc thừa và chỉnh biên bằng Brush/Polygon.
 
 Nếu quy định bắt buộc tự vẽ object đầu tiên ở đúng task Medium thì mình xin coach cho biết cách xử lý bài này.
