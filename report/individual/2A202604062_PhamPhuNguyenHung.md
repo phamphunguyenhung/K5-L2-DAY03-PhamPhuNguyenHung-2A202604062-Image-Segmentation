@@ -29,11 +29,11 @@ Semantic xuất Segmentation mask 1.1, instance và panoptic xuất COCO 1.0. M�
 
 ## 2. Một quyết định trước khi dùng gợi ý
 
-Ở `medium_instance` mình không tự vẽ từ đầu object nào trước khi xem gợi ý; mình dùng gợi ý trước rồi mở CVAT chỉnh sửa và xóa những mask không phù hợp. Mình ghi đúng như vậy.
+Ở `medium_instance` mình dùng gợi ý tự động trước, rồi mở CVAT chỉnh sửa và xóa những mask không phù hợp. Object mình tự vẽ tay là `person 8` ở frame 0. Mình vẽ nó sau khi job đã có gợi ý, nên không phải object vẽ trước khi xem gợi ý.
 
-- Ảnh, vị trí và object Medium đầu tiên tự vẽ: không có; toàn bộ bắt đầu từ gợi ý.
-- Class và quy tắc tôi dùng để chọn biên: với các mask giữ lại, mình chỉ giữ mask nào bám đúng phần nhìn thấy của vật và đúng class; mask sai class, thừa hoặc không bám biên thì xóa hoặc chỉnh lại.
-- Sau khi có gợi ý: mình duyệt từng mask, xóa cái không hợp lý và chỉnh các cái còn lại bằng Brush/Polygon.
+- Ảnh, vị trí và object Medium tự vẽ: `medium_instance`, frame 0, object `person 8` (tên trong danh sách Objects của CVAT).
+- Class và quy tắc tôi dùng để chọn biên: class `person`; chỉ vẽ phần người nhìn thấy, không vẽ phần bị che.
+- Sau khi có gợi ý: với các mask còn lại, mình duyệt từng cái, xóa mask sai class hoặc thừa và chỉnh biên bằng Brush/Polygon.
 
 Nếu quy định bắt buộc tự vẽ object đầu tiên ở đúng task Medium thì mình xin coach cho biết cách xử lý bài này.
 
